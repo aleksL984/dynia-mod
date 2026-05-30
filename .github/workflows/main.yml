@@ -17,9 +17,11 @@ jobs:
       - name: Unzip Project Files
         run: unzip -o Gotowy_Projekt_Modyfikacji.zip
 
+      - name: Setup Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.3
+
       - name: Make Gradle Executable
         run: chmod +x gradlew
-        continue-on-error: true
 
       - name: Build Mod File
         run: ./gradlew build
